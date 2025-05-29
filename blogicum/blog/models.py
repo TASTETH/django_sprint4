@@ -91,6 +91,7 @@ class Post(BaseModel):
         blank=True, null=True
     )
 
+
     class Meta:
         verbose_name = 'публикация'
         verbose_name_plural = 'Публикации'
