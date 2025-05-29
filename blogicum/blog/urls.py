@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .views import PostCreateView
 
 app_name = 'blog'
 
@@ -28,5 +29,10 @@ urlpatterns = [
         'profile/edit/',
         views.ProfileUpdateView.as_view(),
         name='edit_profile'
+    ),
+    path(
+        'posts/create/',
+        PostCreateView.as_view(),
+        name='create_post'
     ),
 ]

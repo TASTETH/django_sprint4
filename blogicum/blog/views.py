@@ -1,4 +1,4 @@
-from django.views.generic import ListView, DetailView, UpdateView
+from django.views.generic import ListView, DetailView, UpdateView, CreateView
 from django.shortcuts import get_object_or_404
 from .models import Post, Category
 from django.utils import timezone
@@ -9,6 +9,17 @@ from .forms import UserUpdateForm
 
 
 User = get_user_model()
+
+
+class PostCreateView(LoginRequiredMixin, CreateView):
+    model = Post
+    fields = ['title', 'text', 'image', 'category']  # замените на актуальные поля вашей модели
+    template_name = 'blog/post_form.html'
+    success_url = reverse_lazy('blog:index')
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
 
 
 class PostListView(ListView):
