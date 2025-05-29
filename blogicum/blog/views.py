@@ -10,6 +10,7 @@ from .forms import UserUpdateForm
 
 User = get_user_model()
 
+
 class PostListView(ListView):
     model = Post
     template_name = 'blog/index.html'
@@ -60,6 +61,7 @@ def filter_published_posts(queryset):
         pub_date__lte=timezone.now(),
         category__is_published=True
     )
+
 
 class ProfileDetailView(DetailView):
     model = User
