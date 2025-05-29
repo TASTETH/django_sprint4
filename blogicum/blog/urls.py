@@ -20,9 +20,9 @@ urlpatterns = [
         name='category_posts'
     ),
     path(
-    'profile/<slug:username>/',
-    views.ProfileDetailView.as_view(),
-    name='profile'
+        'profile/<slug:username>/',
+        views.ProfileDetailView.as_view(),
+        name='profile'
     ),
     path(
         'profile/edit/',
