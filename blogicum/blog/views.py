@@ -13,7 +13,7 @@ User = get_user_model()
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
-    fields = ['title', 'text', 'image', 'category']  # замените на актуальные поля вашей модели
+    fields = ['title', 'text', 'image', 'category']
     template_name = 'blog/post_form.html'
     success_url = reverse_lazy('blog:index')
 
