@@ -1,24 +1,22 @@
 from django.contrib import admin
-
-from .models import Post, Category, Location, Comment
-
-
-@admin.register(Location)
-class LocationAdmin(admin.ModelAdmin):
-    class Meta:
-        model = Location
-
-
-@admin.register(Post)
-class PostAdmin(admin.ModelAdmin):
-    class Meta:
-        model = Post
+from .models import Category, Location, Post, Comment
 
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    class Meta:
-        model = Category
+    pass
 
 
-admin.site.register(Comment)
+@admin.register(Location)
+class LocationAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Post)
+class PostAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    pass
